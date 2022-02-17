@@ -22,13 +22,48 @@ public class SortingUtility {
     private static final int SCREEN_HEIGHT = 50;
 
     /**
-     * private class method bubbleSort called by public sort method
+     * private class method for bubbleSort
+     *
+     * @param items Array list items
+     * @param n size of the array(List)
      */
-    private void bubbleSort(){
+    private void bubbleSort(List<Product> items, int n){
+        Product temp;
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < (n-1); j++){
+                // use comparator for name and string here.
+                if(items.get(i).getPrice() > items.get(i+1).getPrice()){
+                    //how to swap???
+                    temp = items.get(i); // not sure if this will work because of references.
+                    items.set(i,items.get(i+1));
+                }
+            }
+        }
+//        //first pass
+//
+//        for(int i = 0; i < n; i++) { //first loop
+//            for(int l = 0; l < n - 1; l++){ // second loop continues sorting through all passes, the "n - i - 1" part allows the function to handle all passes
+//
+//
+//                if (a[l] > a[l + 1])
+//                {
+//                    swap(a[l], a[l + 1]);
+//
+//                }
+//            }
+//
+//        }
+//        //second pass
+    }
+
+    /**
+     * Helper method for bubbleSort.
+     */
+    private void swap(int x, int y){
 
     }
 
-    /***** @@NOTES QUICK SORT CLASS IMPLEMENTATION*****/
+    /***** @@NOTES QUICK SORT CLASS IMPLEMENTATION *****/
     /*
     For the extra credit assignment in Chapter 12, #8 (QuickSort), the split point formula they gave in the book is wrong.
     Here is the correct formula.
@@ -106,7 +141,7 @@ public class SortingUtility {
     /**
      * private class method quickSort called by public sort method
      */
-    private void quickSort(){
+    private void quickSort(List<Product> list, int begin, int end){
 
     }
 
@@ -118,7 +153,19 @@ public class SortingUtility {
      * @return returns a list of sorted products to the client.
      */
     public List<Product> sort(List<Product> items, int sortingApproach){
+        int b, e, n;
+        // TODO: Fix this, how do we know what number to pass for quickSort and bubbleSort?
+        b = 0;
+        e = 5;
+        n = 10;
 
+        if(sortingApproach == 1){
+            quickSort(items,b,e);
+        }
+
+        if(sortingApproach == 2){
+            bubbleSort(items, n);
+        }
 
         return items; //stub
     }

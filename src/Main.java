@@ -17,6 +17,8 @@ public class Main {
      *  4. DISPLAY SORTED PRODUCT LIST
      */
     public static void main(String[] args) {
+
+        SortingUtility s = new SortingUtility();
 //        1. CREATE PRODUCTS
         Product hammer = new Product("5111XD", "hammer", 4.00);
         Product tinyJesusStatue = new Product("7822RC", "tinyJesusStatue",9.00);
@@ -27,12 +29,13 @@ public class Main {
         ProductList items = new ProductList();
 
         items.add(hammer);
-        System.out.println(hammer);
         items.add(tinyJesusStatue);
         items.add(engine);
         items.add(keyboard);
 
 //        for testing display product
         items.displayAll();
+
+        s.sort(items, 1);
     }
 }

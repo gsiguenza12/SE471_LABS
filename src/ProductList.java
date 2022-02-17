@@ -29,7 +29,7 @@ public class ProductList implements List<Product>, Logger{
 
     @Override
     public void displaySortedList(ProductList p) throws Exception {
-
+        System.out.println("Retrieving SortedList..."); // the real product.
     }
 
 
@@ -118,6 +118,9 @@ public class ProductList implements List<Product>, Logger{
 
     @Override
     public Product get(int index) {
+        if(!items.isEmpty()) {
+            return items.get(index);
+        }
         return null;
     }
 
