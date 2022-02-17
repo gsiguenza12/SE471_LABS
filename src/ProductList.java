@@ -13,6 +13,19 @@
 import java.util.*;
 public class ProductList implements List<Product>, Logger{
 
+    private ArrayList<Product> items;
+
+    // DEFAULT CONSTRUCTOR
+    public ProductList() {
+        items = new ArrayList<Product>();
+    }
+
+    public void displayAll(){
+        System.out.println("The list contains: ");
+        for(Product entry: items){
+            System.out.println(entry); // print each item in the items list.
+        }
+    }
 
     @Override
     public void displaySortedList(ProductList p) throws Exception {
@@ -50,9 +63,22 @@ public class ProductList implements List<Product>, Logger{
         return null;
     }
 
+    /**
+     * TODO: Test this method
+     *
+     * @param product
+     * @return
+     */
     @Override
     public boolean add(Product product) {
-        return false;
+        if(product!=null){
+            items.add(new Product(product.getID(),product.getName(),product.getPrice()));
+        }
+        else{
+            System.err.println("ERROR: Trying to add a null object!\nExiting program....");
+            System.exit(0);
+        }
+        return true;
     }
 
     @Override

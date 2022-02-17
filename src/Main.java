@@ -27,11 +27,12 @@ public class Main {
         ProductList items = new ProductList();
 
         items.add(hammer);
+        System.out.println(hammer);
         items.add(tinyJesusStatue);
         items.add(engine);
         items.add(keyboard);
 
 //        for testing display product
-
+        items.displayAll();
     }
 }

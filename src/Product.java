@@ -17,6 +17,12 @@ public class Product {
     private String name;
     private double price;
 
+    Product(){
+        this.ID = "0";
+        this.name = "0";
+        this.price = 0.0;
+    }
+
     Product(String setID){
         this.ID = setID;
     }
